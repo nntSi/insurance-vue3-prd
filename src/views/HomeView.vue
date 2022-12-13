@@ -383,7 +383,7 @@ const data_claim_modal = reactive({data_res:{
 const bs = ref("");
 const btnSubmitState = () => {
   if(claim_for_send.company == "" || claim_for_send.date == "" || claim_for_send.type == "" || claim_for_send.location == "" ||
-    claim_for_send.employee == "" || claim_for_send.inspector == "" || claim_for_send.inspector_mobile == "" ){
+    claim_for_send.employee == "" || claim_for_send.inspector == "" || claim_for_send.inspector_mobile == "" || claim_for_send.time == "" ){
     bs.value = "bs"
     /* return alert("กรุณากรอกข้อมูลให้ครบท้วน"); */
   }else{
