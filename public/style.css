@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+p{
+  color: var(--text-gray-color);
+}
+h1, h2, h3, h4, h5 {
+  color: var(--text-color);
+}
+a{
+  font-size: 14px;
+  color: var(--text-color);
+}
+:root {
+  background-color: rgb(234, 236, 237);
+  --primary-color:  rgb(71, 99, 129);
+  --secondary-color: rgb(96, 123, 152);
+  --text-color: #4E6B78;
+  --side-menu-color: #f7f7f7;
+  --text-color-white: #fff;
+  --search-side-menu: rgb(236, 236, 236);
+  --text-gray-color: rgb(89, 89, 89);
+  --btn-gray: #9fadb4;
+}
+body {
+  background-color: rgb(234, 236, 237);
+  height: 100vh;
+}
+.form-control:focus{
+  outline: none;
+  box-shadow: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+.btn-darkblue{
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+.btn-darkblue p{
+  color: #fff;
+}
+.btn-darkblue:hover {
+  background-color: rgb(71, 99, 129);
+  color: #fff;
+}
+.btn-gray{
+  border-radius: 20px;
+  padding-left: 81px;
+  padding-right: 81px;
+  background-color: var(--btn-gray);
+  color: #fff;
+}
+.btn-gray:hover {
+  background-color: #717e83;
+  color: #fff;
+}
+.sign-up{
+  width: 35%;
+}
+.fm-square{
+  border-radius: 3px !important;
+}
+label b{
+  font-size: 14px;
+}
+.w-35{
+  width: 35%;
+}
+.sidebar{
+  padding: 25px;
+  position: fixed;
+  z-index: 1;
+  width: 260px;
+  background: var(--side-menu-color);
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.sidebar-logo img{
+  width: 90%;
+}
+.sidebar-search{
+  border-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  background-color: var(--search-side-menu);
+  border: 0;
+}
+.sidebar-search input{
+  /* padding: 10px; */
+  background-color: transparent;
+  border: 0;
+}
+.sidebar-search input:focus{
+  background-color: transparent;
+  border: 0;
+}
+.card-light{
+  padding: 15px;
+  border-radius: 5px;
+}
+.profile-img{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.around-img{
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+.around-img span{
+  padding: 5px;
+  margin-top: 12px;
+  margin-left: -4px;
+}
+.datepicker input{
+  font-size: 16px;
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+.bg-darkblue.a{
+  background-color: #45575d;
+  color: #fff;
+}
+.text-primary-nt{
+  color: var(--text-color);
+}
