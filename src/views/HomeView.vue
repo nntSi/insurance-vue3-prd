@@ -180,6 +180,7 @@ import axios from "axios";
 import jsPDF from 'jspdf';
 import { sarabun, sarabunbold } from '../fonts/fonts'
 import { response } from "express";
+import { dwnClaim } from "@/reports/claim_report"
 
 const store = useStore();
 const state = reactive({ loginState: store.getters["auth/myAccount"] });
@@ -422,8 +423,8 @@ const updateAndMakePdf = () => {
 
 // make pdf
 const downloadClaimFile = async (svhcode:string) => {
-
-  var pdf = new jsPDF();
+  dwnClaim(svhcode);
+  /* var pdf = new jsPDF();
   let width = pdf.internal.pageSize.getWidth();
   const fontbold = () => {
     pdf.addFileToVFS("THSarabunBold.ttf", sarabunbold);
@@ -434,69 +435,69 @@ const downloadClaimFile = async (svhcode:string) => {
     pdf.addFileToVFS("THSarabun.ttf", sarabun);
     pdf.addFont('THSarabun.ttf', 'sarabun', 'normal');
     pdf.setFont('sarabun');
-  }
+  } */
   // readata
-  await axios(apiUrl + '/claim/readdata/' + svhcode).then(response => {
+  /* await axios(apiUrl + '/claim/readdata/' + svhcode).then(response => {
     const month_th = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
     console.log(response.data);
     const dateArray = response.data.body.date.split("-");
     let svh_code = `เลขเคลม : ${response.data.body['svh_code']}`
-    let date = `วันที่ ${parseInt(dateArray[2])} ${month_th[parseInt(dateArray[1]) - 1]} ${dateArray[0]} เวลารับแจ้ง : ${response.data.body.time}`;
+    let date = `วันที่ ${parseInt(dateArray[2])} ${month_th[parseInt(dateArray[1]) - 1]} ${dateArray[0]} เวลารับแจ้ง : ${response.data.body.time}`; */
     /* let time = `เวลารับแจ้ง : ${response.data.body['time']}`;
     let location = `${response.data.body['location']}`; */
     /* console.log(response.data); */
     // head code
-    let padding = 25
+    /* let padding = 25
     fontbold();
     pdf.setFontSize(padding);
-    pdf.text(svh_code, width/2, padding, {align:'center'});
+    pdf.text(svh_code, width/2, padding, {align:'center'}); */
     // content
-    fontnormal();
+   /*  fontnormal(); */
     // date
-    pdf.setFontSize(16);
-    pdf.text(date, 210-padding, 42, {align:'right'});
+    /* pdf.setFontSize(16);
+    pdf.text(date, 210-padding, 42, {align:'right'}); */
     // employee
-    fontbold();
+    /* fontbold();
     pdf.text('พนักงานรับแจ้ง : ', padding, 42);
     fontnormal();
-    pdf.text(response.data.body['employee'], 53, 42);
+    pdf.text(response.data.body['employee'], 53, 42); */
     // inspector
-    fontbold();
+    /* fontbold();
     pdf.text('เจ้าหน้าที่ตรวจสอบอุบัติเหตุ : ', padding, 50);
     fontnormal();
-    pdf.text(response.data.body['Inspector'] + ' ' +  response.data.body['inspector_mobile'], 72, 50);
+    pdf.text(response.data.body['Inspector'] + ' ' +  response.data.body['inspector_mobile'], 72, 50); */
     // claim
     // company
-    fontbold();
+    /* fontbold();
     pdf.text('บริษัทประกันภัย : ', padding, 58);
     fontnormal();
-    pdf.text(response.data.body['company'], 54, 58);
+    pdf.text(response.data.body['company'], 54, 58); */
     // type
-    fontbold();
+    /* fontbold();
     pdf.text('ประเภท : ', padding, 66);
     fontnormal();
-    pdf.text(response.data.body['type'] + ' ' + response.data.body['date_dry'] + ' ' + response.data.body['time_dry'], 41, 66);
+    pdf.text(response.data.body['type'] + ' ' + response.data.body['date_dry'] + ' ' + response.data.body['time_dry'], 41, 66); */
     // location
-    fontbold();
+    /* fontbold();
     pdf.text('สถานที่เกิดเหตุ : ', padding, 74);
     fontnormal();
-    pdf.text(response.data.body['location'], 53, 74);
+    pdf.text(response.data.body['location'], 53, 74); */
     // provicne distric
-    fontbold();
+    /* fontbold();
     pdf.text('อำเภอ : ', padding, 82);
     fontnormal();
     pdf.text(response.data.district['name'], 39, 82);
     fontbold();
     pdf.text('จังหวัด : ', 70, 82);
     fontnormal();
-    pdf.text(response.data.body['name'], 86, 82);
+    pdf.text(response.data.body['name'], 86, 82); */
     // source employee
-    fontbold();
+    /* fontbold();
     pdf.text('จ่ายงานโดย : ', padding, 90);
     fontnormal();
-    pdf.text(response.data.body['source_employee'], 50, 90);
+    pdf.text(response.data.body['source_employee'], 50, 90); */
     // cust
-    fontbold();
+    /* fontbold();
     pdf.text('ชื่อผู้เอาประกัน : ', padding, 98);
     fontnormal();
     pdf.text(response.data.body['customer_claim_name'], 52, 98);
@@ -511,11 +512,11 @@ const downloadClaimFile = async (svhcode:string) => {
     fontbold();
     pdf.text('ยี่ห้อรถ : ', padding, 122);
     fontnormal();
-    pdf.text(response.data.body['brand_car'], 41, 122);
+    pdf.text(response.data.body['brand_car'], 41, 122); */
     
     // export
-    pdf.save('hello.pdf');
-  });
+    /* pdf.save('hello.pdf'); */
+  /* }); */
 };
 
 const clearModal = () => {
