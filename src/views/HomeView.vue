@@ -8,7 +8,7 @@
             <div class="width">
               <div class="row mb-1">
                 <div class="col-md-6 mb-sm-2">
-                  <label>วันที่รับแจ้ง</label>
+                  <label>วันที่รับแจ้ง <b class="text-danger fs-6">ตรวจสอบวันที่ทุกครั้งก่อนการบันทึก*</b></label>
                   <DatePicker class="datepicker" v-model="date" :enableTimePicker="false" locale="th" :dayNames="['จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.', 'อา.']" :format="format" @update:modelValue="format"/>
                 </div>
                 <div class="col-md-6 mb-sm-2">
@@ -282,7 +282,8 @@ const claim_for_send = reactive({
   brand_car: "",
   customer_claim_mobile: "",
   customer_claim_name: "",
-  license_plate: ""
+  license_plate: "",
+  inspector_id: "" 
 });
 // reset form
 const resetClaimForm = () => {
@@ -305,6 +306,7 @@ const getMobile = async (inspector_id:string) => {
     console.log(response.data.inspector[0])
     claim_for_send.inspector = response.data.inspector[0].title + response.data.inspector[0].firstname + ' ' + response.data.inspector[0].lastname;
     claim_for_send.inspector_mobile = response.data.inspector[0].mobile;
+    claim_for_send.inspector_id = response.data.inspector[0].id;
   });
   /* for (let i in inspector_data.data.inspector){
     if(i == inspector_id){
