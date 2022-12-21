@@ -1,4 +1,4 @@
-export const apiUrl = "http://localhost:3000/api/svh"
+export const apiUrl = "http://192.168.1.101:3000/api/svh"
 
 export const server = {
   LOGIN_URL: `login`,
